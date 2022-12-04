@@ -33,7 +33,9 @@ After all setup is complete.
 - Copy .sample.env -> .env
 - Run ./run.sh
 
+Navigate to http://localhost:8000/redoc
 
+-----------------------
 Feel free to create PR or use this boilerplate for reference
 
 
