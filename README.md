@@ -23,6 +23,11 @@ source env/bin/activate
 
 pip install -r requirements.txt
 
+
+
+# also run pre-commit install when contributing to codebase [optional]
+pre-commit install
+
 # Done
 ```
 
