@@ -1,5 +1,3 @@
-from .core_dto import CurrentUser
+from .core_dto import BaseResponseDto, CurrentUser
 
-
-
-__all__ = ["CurrentUser"]
+__all__ = ["CurrentUser", "BaseResponseDto"]
