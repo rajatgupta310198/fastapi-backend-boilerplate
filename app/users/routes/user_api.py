@@ -23,8 +23,8 @@ def sign_up(body: UserSignUpDto, db: Session = Depends(get_db)):
     user = db.query(User).filter_by(email=body.email).first()
     if user:
         raise AlreadyExistsException(detail="User already exists")
-    password_service = PasswordService(in_pass=body.password)
-    hashed_password: bytes = password_service.encrypt_password()
+    password_service = PasswordService()
+    hashed_password: bytes = password_service.encrypt_password(password=body.password)
     user_db = User(email=body.email, name=body.name, password=hashed_password.decode())
     db.add(user_db)
     db.commit()

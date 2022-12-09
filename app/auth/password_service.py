@@ -22,16 +22,14 @@ class PasswordService:
         key = base64.urlsafe_b64encode(kdf.derive(in_string.encode()))
         return key
 
-    def __init__(self, in_pass: str, second_pass: str = None) -> None:
-        self.in_pass = in_pass
-        self.second_pass = second_pass
+    def __init__(self) -> None:
         self.salt = AppConfigSettings.PASSWORD_SALT
 
-    def verify_password(self) -> bool:
+    def verify_password(self, password_entered: str, actual_password: str) -> bool:
         return (
-            PasswordService.generate_key(self.in_pass).decode()
-            == PasswordService.encrypt_password(self.second_pass).decode()
+            PasswordService.generate_key(password_entered).decode() == actual_password
         )
 
-    def encrypt_password(self) -> bytes:
-        return PasswordService.generate_key(self.in_pass)
+    def encrypt_password(self, password: str) -> bytes:
+
+        return PasswordService.generate_key(password)
