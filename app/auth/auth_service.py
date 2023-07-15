@@ -9,9 +9,9 @@ from sqlalchemy.orm import Session
 from app.exceptions.exceptions import DoesNotExistsException
 from app.exceptions.exceptions import InvalidCredentialsException
 from app.exceptions.exceptions import UnauthorizedException
+from app.models import User
 from app.settings import AppConfigSettings
 from app.users.dto.requests.auth_dto import LoginDto
-from app.users.models import User
 
 
 class AuthService:

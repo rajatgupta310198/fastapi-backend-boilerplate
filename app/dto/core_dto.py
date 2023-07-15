@@ -6,12 +6,12 @@ from pydantic import Extra
 
 class BaseResponseDto(BaseModel):
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class BaseRequestDto(BaseModel):
     class Config:
-        anystr_strip_whitespace = True
+        str_strip_whitespace = True
         extra = Extra.forbid
 
 

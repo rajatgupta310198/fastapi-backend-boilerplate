@@ -24,7 +24,6 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 target_metadata = Base.metadata
 
@@ -34,7 +33,6 @@ target_metadata = Base.metadata
 # ... etc.
 
 config.set_main_option("sqlalchemy.url", os.getenv("POSTGRES_DATABASE_URL"))
-
 
 
 def run_migrations_offline() -> None:
