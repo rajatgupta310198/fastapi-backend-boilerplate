@@ -1,6 +1,6 @@
 # fastapi-backend-boilerplate
 
-This is basic backend service boilerplate of FastAPI with Postgres. 
+This is basic backend service boilerplate of FastAPI with Postgres.
 
 ### Requirements
 
@@ -33,10 +33,14 @@ pre-commit install
 
 
 ### Run
-After all setup is complete.
+After all setup is complete. If you wish to run directly to host system
 
-- Copy .sample.env -> .env
-- Run ./run.sh
+- Copy `.sample.env` -> `.env`
+- Run `./run.sh`
+
+If you wish to run from `docker-compose` file
+- Copy `.sample.docker.env` -> `.env``
+- `docker-compose up -d`
 
 Navigate to http://localhost:8000/redoc
 
@@ -44,5 +48,5 @@ Navigate to http://localhost:8000/redoc
 Feel free to create PR or use this boilerplate for reference
 
 
-### Contact 
+### Contact
 - Email: rajatgupta310198@gmail.com or rajat310198@outlook.com
