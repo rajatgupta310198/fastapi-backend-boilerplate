@@ -1,6 +1,11 @@
 from celery import Celery
+from dotenv import load_dotenv
 
-celery_app = Celery(broker="redis://localhost:6379")
+load_dotenv()
+
+from .settings import AppConfigSettings
+
+celery_app = Celery(broker=AppConfigSettings.CELERY_BROKER)
 
 celery_app.conf.update(
     task_serializer="json",
