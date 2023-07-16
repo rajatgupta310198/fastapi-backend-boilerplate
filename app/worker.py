@@ -1,4 +1,5 @@
 from celery import Celery
+from celery import Task
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,3 +25,15 @@ celery_app.conf.beat_schedule = {
 }
 
 celery_app.autodiscover_tasks(["app.users"])
+
+
+class DbTask(Task):
+    _db = None
+
+    @property
+    def db(self):
+        if self._db is None:
+            from app.databases.db import SessionLocal
+
+            self._db = SessionLocal()
+        return self._db
