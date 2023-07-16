@@ -10,3 +10,4 @@ class AppConfigSettings:
     ACCESS_SECRET = os.getenv("ACCESS_SECRET")
     REFRESH_SECRET = os.getenv("REFRESH_SECRET")
     PASSWORD_SALT = os.getenv("PASSWORD_SALT")
+    CELERY_BROKER = f"{os.getenv('REDIS_HOST')}:{os.getenv('REDIS_PORT')}"
