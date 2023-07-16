@@ -9,4 +9,13 @@ celery_app.conf.update(
     timezone="Europe/Oslo",
     enable_utc=True,
 )
+
+celery_app.conf.beat_schedule = {
+    "run-after-five-secs-sync": {
+        "task": "sample_sync_task",
+        "schedule": 5.0,
+        "args": {},
+    },
+}
+
 celery_app.autodiscover_tasks(["app.users"])

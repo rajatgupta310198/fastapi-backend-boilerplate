@@ -21,6 +21,16 @@ services:
     depends_on:
       - redis
       - db
+  celery_beat:
+    build:
+      dockerfile: Dockerfile.celerybeat
+    container_name: celery_beat
+    environment:
+      - PYTHONBUFFERED=0
+    depends_on:
+      - redis
+      - db
+      - celery_default
   redis:
     image: redis
     container_name: cache
