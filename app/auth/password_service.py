@@ -31,5 +31,4 @@ class PasswordService:
         )
 
     def encrypt_password(self, password: str) -> bytes:
-
         return PasswordService.generate_key(password)

@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 COPY . /usr/src/app
 
-CMD ./run.sh
+CMD  celery -A app.worker worker --loglevel=INFO
