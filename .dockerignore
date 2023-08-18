@@ -1,4 +1,9 @@
 .sample.env
+.sample.docker.env
+celerybeat-schedule
+docker-compose.yaml
+LICENSE
+.pre-commit-config.yaml
 env
 venv
 __pycache__
