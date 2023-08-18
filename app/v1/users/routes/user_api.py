@@ -8,11 +8,11 @@ from app.auth.password_service import PasswordService
 from app.deps import get_db
 from app.exceptions.exceptions import AlreadyExistsException
 from app.models import User
-from app.users.dto.requests.user_dto import UserSignUpDto
-from app.users.dto.responses.user_dto import UserResponseDto
+from app.v1.users.dto.requests.user_dto import UserSignUpDto
+from app.v1.users.dto.responses.user_dto import UserResponseDto
 from app.worker import celery_app
 
-user_api = APIRouter(tags=["User"], prefix="/user")
+user_api = APIRouter(tags=["User"])
 
 
 @user_api.post(

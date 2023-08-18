@@ -11,7 +11,7 @@ from app.exceptions.exceptions import InvalidCredentialsException
 from app.exceptions.exceptions import UnauthorizedException
 from app.models import User
 from app.settings import AppConfigSettings
-from app.users.dto.requests.auth_dto import LoginDto
+from app.v1.users.dto.requests.auth_dto import LoginDto
 
 
 class AuthService:

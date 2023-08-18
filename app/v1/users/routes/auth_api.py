@@ -5,10 +5,10 @@ from sqlalchemy.orm import Session
 
 from app.auth.auth_service import AuthService
 from app.deps import get_db
-from app.users.dto.requests import LoginDto
-from app.users.dto.responses import TokenResponse
+from app.v1.users.dto.requests import LoginDto
+from app.v1.users.dto.responses import TokenResponse
 
-auth_api = APIRouter(prefix="/auth", tags=["Authentication APIs"])
+auth_api = APIRouter(tags=["Authentication APIs"])
 
 
 @auth_api.post("/login", status_code=status.HTTP_200_OK, response_model=TokenResponse)
